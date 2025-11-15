@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import './StartPage.css';
 import ProfileCard from '../ProfileCard';
 import pic from '../../assets/avatar/avatar-pic.png'
-import Cubes from '../Cubes';
 import Aurora from '../BgWaves';
 import ScrollReveal from '../ScrollReveal';
+import UIButton from '../Button/UIButton';
+import { onResume, sendEmail } from '../utils/utils';
+import { contentArray, ProfileCardInfo } from '../utils/constant';
 
 function StartPage() {
     const navigate = useNavigate();
@@ -16,22 +18,22 @@ function StartPage() {
         // return () => window.removeEventListener('keydown', handleKeyDown);
     }, [navigate]);
 
-    const handleClick = () => {
+    const goToGame = () => {
         navigate('/main');
     };
 
     const renderProfileCard = () => { 
         return (
             <ProfileCard
-                    name="Arjun Syam"
-                    title="Software Engineer @ Cisco"
-                    handle="huraken.0w0"
-                    status="Online"
-                    contactText="Contact Me"
+                    name={ProfileCardInfo.name}
+                    title={ProfileCardInfo.title}
+                    handle={ProfileCardInfo.handle}
+                    status={ProfileCardInfo.status}
+                    contactText="Email Me"
                     avatarUrl={pic}
-                    showUserInfo={false}
+                    showUserInfo={true}
                     enableTilt={true}
-                    onContactClick={() => console.log('Contact clicked')}
+                    onContactClick={() => sendEmail({to: ProfileCardInfo.email, subject: " ", body: " "})}
                 />
         )
     }
@@ -51,16 +53,22 @@ function StartPage() {
                     blurStrength={10}
                     rotationEnd="top center" // Start animating when ProfileCard is off screen
                     wordAnimationEnd="top center"
+                    containerClassName="centered-text"
                 >
                     {text}
                 </ScrollReveal>
         )
-    } 
+    }
+
+    const startPageContent = (content) => {
+        return content.map((item, index) => (
+            scrollText(item)
+        ));
+    }
 
     return (
         <div
             className="start-page"
-            // onClick={handleClick}
             tabIndex={0}
         >
             <div className="cubes-bg">
@@ -74,10 +82,15 @@ function StartPage() {
             <div className="start-page-content">
                 {scrollBox(10)}
                 {renderProfileCard()}
-                {scrollText("Hello there!")}
-                {scrollBox(50)}
-                {scrollText("I'm a Full Stack developer")}
-                {scrollBox(50)}
+                {scrollBox(10)}
+                <h1 className="main-menu-title">Hello there!</h1>
+                {scrollBox(10)}
+                <UIButton onClick={onResume}>See my Resume</UIButton>
+                {scrollBox(10)}
+                {startPageContent(contentArray)}
+                {scrollBox(10)}
+                <UIButton onClick={goToGame}>Open Hrkn World</UIButton>
+                {scrollBox(10)}
             </div>
             
         </div>

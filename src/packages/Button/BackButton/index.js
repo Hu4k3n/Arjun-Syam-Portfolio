@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './BackButton.css';
 import UIButton from '../UIButton';
+import { Buttons } from '../../utils/constant';
 
 
 const BackButton = (props) => {
@@ -9,6 +10,9 @@ const BackButton = (props) => {
     const [musicOn, setMusicOn] = React.useState(!!props.bgAudioObject);
 
     const handleBack = () => {
+        if (musicOn) {
+            props.onPause && props.onPause();
+        }
         navigate('/main');
     };
 
@@ -27,8 +31,8 @@ const BackButton = (props) => {
 
     return (
         <div className="back-button-row">
-            <UIButton className="back-button" onClick={handleBack}>◄Back</UIButton>
-            <UIButton className="music-button" onClick={onMusic}>{musicOn ? 'Music: On' : 'Music: Off'}</UIButton>
+            <UIButton className="back-button" onClick={handleBack}>{Buttons.back}</UIButton>
+            <UIButton className="music-button" onClick={onMusic}>{musicOn ? Buttons.musicOn : Buttons.musicOff}</UIButton>
         </div>
     );
 };

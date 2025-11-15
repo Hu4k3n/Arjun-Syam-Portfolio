@@ -13,3 +13,7 @@
   display: inline-block;
   color: #fff;
 }
+
+.centered-text {
+  text-align: center;
+}

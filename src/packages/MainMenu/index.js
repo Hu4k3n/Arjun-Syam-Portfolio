@@ -4,6 +4,7 @@ import UIButton from '../Button/UIButton';
 import BackgroundVideo from './BackgroundVideo';
 import bgArtVideo from '../../assets/bg/bgArt.mp4';
 import { useNavigate } from 'react-router-dom';
+import { onResume } from '../utils/utils';
 
 
 function MainMenu(props) {
@@ -17,9 +18,6 @@ function MainMenu(props) {
         },3000)
         navigate('/game');
     };
-    const onResume = () => {
-        console.log("Options button clicked");
-    };
     const onMusic = () => {
         if (musicOn) {
             props.onPause && props.onPause();
@@ -29,6 +27,9 @@ function MainMenu(props) {
         setMusicOn(!musicOn);
     };
     const onAbout = () => {
+        if (musicOn) {
+            props.onPause && props.onPause();
+        }
         navigate('/')
     };
 
