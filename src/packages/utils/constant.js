@@ -10,7 +10,7 @@ export const ProfileCardInfo = {
     title: "Software Engineer @ Cisco",
     handle: "huraken.0w0",
     status: "Online",
-    email: "arjun.syam23@gmail.com"
+    linkedIn: "https://www.linkedin.com/in/arjunsyam/"
 }
 
 export const Buttons = {

@@ -57,11 +57,11 @@ function StartPage() {
                     title={ProfileCardInfo.title}
                     handle={ProfileCardInfo.handle}
                     status={ProfileCardInfo.status}
-                    contactText="Email Me"
+                    contactText="LinkedIn"
                     avatarUrl={pic}
                     showUserInfo={true}
                     enableTilt={true}
-                    onContactClick={() => sendEmail({to: ProfileCardInfo.email, subject: " ", body: " "})}
+                    onContactClick={() => window.open(`${ProfileCardInfo.linkedIn}`, '_blank', 'noopener,noreferrer')}
                 />
         )
     }
