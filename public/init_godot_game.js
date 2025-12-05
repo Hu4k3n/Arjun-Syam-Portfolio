@@ -2,7 +2,24 @@
 // It exposes a function `init_godot_game()` that can be called from React to start the game.
 
 function init_godot_game() {
-  const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":96177152,"index.wasm":52106500},"focusCanvas":true,"gdextensionLibs":[]};
+  // Get base path from the base tag (set by React's homepage in package.json)
+  const baseTag = document.querySelector('base');
+  const basePath = baseTag ? new URL(baseTag.href).pathname : '/';
+  
+  const GODOT_CONFIG = {
+    "args":[],
+    "canvasResizePolicy":1,
+    "ensureCrossOriginIsolationHeaders":true,
+    "executable":"index",
+    "experimentalVK":false,
+    "fileSizes":{"index.pck":96177152,"index.wasm":52106500},
+    "focusCanvas":true,
+    "gdextensionLibs":[],
+    // Add the locateFile function to tell Godot where to find its files
+    "locateFile": function(file) {
+      return basePath + file;
+    }
+  };
   const GODOT_THREADS_ENABLED = false;
   const engine = new window.Engine(GODOT_CONFIG);
 
