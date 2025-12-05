@@ -4,11 +4,12 @@ import githubIcon from '../../assets/socialIcons/Github.svg';
 import linkedinIcon from '../../assets/socialIcons/LinkedIN.svg';
 import instagramIcon from '../../assets/socialIcons/Instagram.svg';
 import youtubeIcon from '../../assets/socialIcons/Youtube.svg';
-import { ProfileCardInfo } from '../utils/constant';
+import resumeIcon from '../../assets/otherIcons/cv.svg';
+import { ProfileCardInfo, RESUME_URL } from '../utils/constant';
 import './Socials.css';
 import { openLink } from '../utils/utils';
 
-function Socials() {
+function Socials({ showResume = false }) {
     return (
         <div className="socials-container">
             <SocialButton 
@@ -35,6 +36,13 @@ function Socials() {
                 className="icon-only"
                 onClick={() => openLink(ProfileCardInfo.youtube)}
             />
+            {showResume && <SocialButton 
+                icon={resumeIcon} 
+                alt="Resume" 
+                className="icon-only"
+                onClick={() => openLink(RESUME_URL)}
+            />}
+            
         </div>
     );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import './howToPlay.css';
 const HowToPlay = () => (
     <div className="how-to-play-root">

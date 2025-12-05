@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { onResume } from '../utils/utils';
 import { AudioContext } from '../../context/AudioContext';
 import Socials from '../Socials';
+import { Buttons } from '../utils/constant';
 
 
 function MainMenu() {
@@ -31,7 +32,7 @@ function MainMenu() {
         setMusicOn(!musicOn);
     };
 
-    const onAbout = () => {
+    const onExit = () => {
         if (musicOn) {
             pauseAudio();
         }
@@ -47,10 +48,10 @@ function MainMenu() {
             <BackgroundVideo videoPath={bgArtVideo} />
             <div className="main-menu-container">
                 <h1 className="main-menu-title">Arjun's Portfolio Island</h1>
-                <UIButton onClick={onPlay}>Play</UIButton>
-                <UIButton onClick={onResume}>See my Resume</UIButton>
-                <UIButton onClick={onMusic}>{musicOn ? 'Music: On' : 'Music: Off'}</UIButton>
-                <UIButton onClick={onAbout}>About Me</UIButton>
+                <UIButton onClick={onPlay}>{Buttons.play}</UIButton>
+                <UIButton onClick={onResume}>{Buttons.resume}</UIButton>
+                <UIButton onClick={onMusic}>{musicOn ? Buttons.musicOn : Buttons.musicOff}</UIButton>
+                <UIButton onClick={onExit}>{Buttons.exit}</UIButton>
                 <Socials />
             </div>
         </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import UIButton from '../UIButton';
 import './SocialButton.css';
 

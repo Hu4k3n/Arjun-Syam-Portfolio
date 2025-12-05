@@ -1,4 +1,5 @@
-import { getExp } from "./utils"
+
+export const getExp = () => new Date().getFullYear() - 2022;
 
 export const contentArray = [
     `Arjun Syam is a Full Stack Engineer with ${getExp()}+ years of experience delivering scalable, high-impact web applications.`,
@@ -24,5 +25,7 @@ export const Buttons = {
     musicOff: "Music: Off",
     back: "Go Back",
     resume: "See my Resume",
-    about: "About Me",
+    exit: "Exit Island",
 }
+
+export const RESUME_URL = 'https://drive.google.com/drive/folders/1Hzh_gnoERSSKut7Guy8KzvXpOCws7o83?usp=sharing';
