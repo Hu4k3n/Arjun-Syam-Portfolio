@@ -47,7 +47,7 @@ function MainMenu() {
         <div className="main-menu-background-wrapper">
             <BackgroundVideo videoPath={bgArtVideo} />
             <div className="main-menu-container">
-                <h1 className="main-menu-title">Arjun's Portfolio Island</h1>
+                <h1 className="main-menu-title">Arjun's Island</h1>
                 <UIButton onClick={onPlay}>{Buttons.play}</UIButton>
                 <UIButton onClick={onResume}>{Buttons.resume}</UIButton>
                 <UIButton onClick={onMusic}>{musicOn ? Buttons.musicOn : Buttons.musicOff}</UIButton>
