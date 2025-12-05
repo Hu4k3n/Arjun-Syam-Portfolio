@@ -91,7 +91,7 @@ function StartPage() {
                 {startPageContent(contentArray)}
                 {scrollBox(30)}
                 <h4 className="main-menu-title">Enjoy your stay!</h4>
-                <UIButton onClick={goToGame}>Explore Island</UIButton>
+                <UIButton onClick={goToGame}>Explore</UIButton>
                 <h5 className="main-menu-title">Explore my portfolio through an island</h5>
                 <h5 className="main-menu-title">Let me know what you think!</h5>
             </div>
