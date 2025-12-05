@@ -9,6 +9,7 @@ import UIButton from '../Button/UIButton';
 import { onResume, sendEmail } from '../utils/utils';
 import { contentArray, ProfileCardInfo } from '../utils/constant';
 import { AudioContext } from '../../context/AudioContext';
+import Socials from '../Socials';
 
 function StartPage() {
     const navigate = useNavigate();
@@ -59,7 +60,7 @@ function StartPage() {
                     status={ProfileCardInfo.status}
                     contactText="LinkedIn"
                     avatarUrl={pic}
-                    showUserInfo={true}
+                    showUserInfo={false}
                     enableTilt={true}
                     onContactClick={() => window.open(`${ProfileCardInfo.linkedIn}`, '_blank', 'noopener,noreferrer')}
                 />
@@ -86,6 +87,7 @@ function StartPage() {
                 <h1 className="main-menu-title">Hello there!</h1>
                 {scrollBox(10)}
                 <UIButton onClick={onResume}>See my Resume</UIButton>
+                <Socials />
                 {scrollBox(10)}
                 {startPageContent(contentArray)}
                 {scrollBox(10)}

@@ -1,0 +1,24 @@
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-button-icon {
+    display: block;
+    /* Remove filter to show icon colors */
+}
+
+.social-button-text {
+    display: inline-block;
+}
+
+/* Optional: Icon-only button styling */
+.social-button.icon-only {
+    padding: 15px;
+}
+
+.social-button.icon-only .social-button-text {
+    display: none;
+}
