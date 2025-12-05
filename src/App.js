@@ -7,7 +7,7 @@ import GodotGame from './packages/GameInit/GameCanvas/GodotGame';
 function App() {
   return (
     <AudioProvider>
-      <Router basename="/arjun-portfolio">
+      <Router>
         <Routes>
           <Route path="/" element={<StartPage />} />
           <Route path="/main" element={<MainMenu />} />
