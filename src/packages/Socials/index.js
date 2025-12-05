@@ -12,6 +12,12 @@ import { openLink } from '../utils/utils';
 function Socials({ showResume = false }) {
     return (
         <div className="socials-container">
+            {showResume && <SocialButton 
+                icon={resumeIcon} 
+                alt="Resume" 
+                className="icon-only"
+                onClick={() => openLink(RESUME_URL)}
+            />}
             <SocialButton 
                 icon={githubIcon} 
                 alt="GitHub" 
@@ -36,12 +42,6 @@ function Socials({ showResume = false }) {
                 className="icon-only"
                 onClick={() => openLink(ProfileCardInfo.youtube)}
             />
-            {showResume && <SocialButton 
-                icon={resumeIcon} 
-                alt="Resume" 
-                className="icon-only"
-                onClick={() => openLink(RESUME_URL)}
-            />}
             
         </div>
     );
