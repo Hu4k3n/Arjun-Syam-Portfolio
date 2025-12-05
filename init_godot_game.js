@@ -2,16 +2,26 @@
 // It exposes a function `init_godot_game()` that can be called from React to start the game.
 
 function init_godot_game() {
-  // Get the base path from the current script location or use process.env.PUBLIC_URL fallback
-  const basePath = document.currentScript?.src ? new URL('.', document.currentScript.src).pathname : '/arjun-portfolio/';
-  const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":96177152,"index.wasm":52106500},"focusCanvas":true,"gdextensionLibs":[]};
+  // Detect the base path - in production it will be /arjun-portfolio/, in dev it will be /
+  const basePath = document.querySelector('base')?.href || 
+                   (window.location.pathname.includes('/arjun-portfolio/') ? '/arjun-portfolio/' : '/');
+  
+  const GODOT_CONFIG = {
+    "args":[],
+    "canvasResizePolicy":1,
+    "ensureCrossOriginIsolationHeaders":true,
+    "executable":"index",
+    "experimentalVK":false,
+    "fileSizes":{"index.pck":96177152,"index.wasm":52106500},
+    "focusCanvas":true,
+    "gdextensionLibs":[],
+    // Add the locateFile function to tell Godot where to find its files
+    "locateFile": function(file) {
+      return basePath + file;
+    }
+  };
   const GODOT_THREADS_ENABLED = false;
   const engine = new window.Engine(GODOT_CONFIG);
-  
-  // Override the locate_file function to use the correct base path
-  engine.Config.locateFile = function(file) {
-    return basePath + file;
-  };
 
   (function () {
     const statusOverlay = document.getElementById('status');
