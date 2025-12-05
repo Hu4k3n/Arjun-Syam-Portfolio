@@ -18,7 +18,7 @@ const HowToPlay = () => (
             <br />
             <br />
             <br />
-            Loading vibes and music...
+            <h1>Loading island... </h1>
         </div>
     </div>
 );

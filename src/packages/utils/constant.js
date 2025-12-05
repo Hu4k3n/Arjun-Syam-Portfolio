@@ -22,7 +22,7 @@ export const Buttons = {
     play: "Play",
     musicOn: "Music: On",
     musicOff: "Music: Off",
-    back: "◄Back",
+    back: "Go Back",
     resume: "See my Resume",
     about: "About Me",
 }

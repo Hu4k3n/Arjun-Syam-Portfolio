@@ -6,6 +6,7 @@ import bgArtVideo from '../../assets/bg/bgArt.mp4';
 import { useNavigate } from 'react-router-dom';
 import { onResume } from '../utils/utils';
 import { AudioContext } from '../../context/AudioContext';
+import Socials from '../Socials';
 
 
 function MainMenu() {
@@ -45,11 +46,12 @@ function MainMenu() {
         <div className="main-menu-background-wrapper">
             <BackgroundVideo videoPath={bgArtVideo} />
             <div className="main-menu-container">
-                <h1 className="main-menu-title">Game Menu</h1>
+                <h1 className="main-menu-title">Arjun's Portfolio Island</h1>
                 <UIButton onClick={onPlay}>Play</UIButton>
                 <UIButton onClick={onResume}>See my Resume</UIButton>
                 <UIButton onClick={onMusic}>{musicOn ? 'Music: On' : 'Music: Off'}</UIButton>
                 <UIButton onClick={onAbout}>About Me</UIButton>
+                <Socials />
             </div>
         </div>
     );
