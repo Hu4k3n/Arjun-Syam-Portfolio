@@ -56,9 +56,6 @@ function StartPage() {
             <ProfileCard
                     name={ProfileCardInfo.name}
                     title={ProfileCardInfo.title}
-                    handle={ProfileCardInfo.handle}
-                    status={ProfileCardInfo.status}
-                    contactText="LinkedIn"
                     avatarUrl={pic}
                     showUserInfo={false}
                     enableTilt={true}

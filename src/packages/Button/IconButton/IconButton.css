@@ -1,24 +1,24 @@
-.social-button {
+.icon-button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-.social-button-icon {
+.icon-button-icon {
     display: block;
     /* Remove filter to show icon colors */
 }
 
-.social-button-text {
+.icon-button-text {
     display: inline-block;
 }
 
 /* Optional: Icon-only button styling */
-.social-button.icon-only {
+.icon-button.icon-only {
     padding: 15px;
 }
 
-.social-button.icon-only .social-button-text {
+.icon-button.icon-only .icon-button-text {
     display: none;
 }

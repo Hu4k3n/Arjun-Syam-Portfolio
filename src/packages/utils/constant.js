@@ -11,8 +11,6 @@ export const contentArray = [
 export const ProfileCardInfo = {
     name: "Arjun Syam",
     title: "Software Engineer @ Cisco",
-    handle: "huraken.0w0",
-    status: "Online",
     linkedIn: "https://www.linkedin.com/in/arjunsyam/",
     github: "https://github.com/Hu4k3n",
     instagram: "https://instagram.com/huraken.0w0",
@@ -23,9 +21,8 @@ export const Buttons = {
     play: "Play",
     musicOn: "Music: On",
     musicOff: "Music: Off",
-    back: "Go Back",
     resume: "See my Resume",
-    exit: "Exit Island",
+    exit: "Exit",
 }
 
 export const RESUME_URL = 'https://drive.google.com/drive/folders/1Hzh_gnoERSSKut7Guy8KzvXpOCws7o83?usp=sharing';
