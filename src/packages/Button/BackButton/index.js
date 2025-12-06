@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import './BackButton.css';
 import UIButton from '../UIButton';
 import { Buttons } from '../../utils/constant';
+import IconButton from '../IconButton';
+import musicOnIcon from '../../../assets/otherIcons/musicOn.svg';
+import musicOffIcon from '../../../assets/otherIcons/musicOff.svg';
+import backIcon from '../../../assets/otherIcons/back.svg';
 
 
 const BackButton = (props) => {
@@ -31,8 +35,13 @@ const BackButton = (props) => {
 
     return (
         <div className="back-button-row">
-            <UIButton className="back-button" onClick={handleBack}>{Buttons.back}</UIButton>
-            <UIButton className="music-button" onClick={onMusic}>{musicOn ? Buttons.musicOn : Buttons.musicOff}</UIButton>
+            <IconButton icon={backIcon} alt="Back" className="icon-only back-button" onClick={handleBack} />
+            <IconButton 
+                icon={musicOn ? musicOnIcon : musicOffIcon} 
+                alt={musicOn ? Buttons.musicOn : Buttons.musicOff} 
+                className="icon-only music-button" 
+                onClick={onMusic} 
+            />
         </div>
     );
 };
